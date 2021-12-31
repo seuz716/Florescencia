@@ -1,0 +1,150 @@
+body{
+    background: url("../img/fondo_index.png") right top no-repeat;
+    font-family: Arial, Helvetica, sans-serif
+}
+header{
+    /* background-color: gray;
+    opacity: 0.5; */
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    border-radius: 5%;
+    top: 0;
+    height: 13%;
+}
+nav{
+    float: left;
+    margin: 20px;
+    
+    display: inline;
+    
+    
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    
+}
+#texto h1{
+    color:#FFB700;
+}
+#n_s{
+    color:#FFB700;
+}
+#search{
+    float: center;
+    margin: 30px;
+    
+    display: inline;
+}
+#sign_up{
+    float: right;
+    margin: 1% 1% 1%;
+    
+}
+header button{
+    border-bottom-style: dashed;
+    border-bottom: #235C34;
+    background: #235C34;
+    border-radius: 5px;
+    opacity: 100;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+}
+#boton_buscar{
+    border-radius: 50px;
+    width: 50px;
+    margin-top: 10px;
+    
+}
+#search input{
+    width: 200x;
+    height: 35px;
+}
+header button a{
+    color: white;
+    text-decoration:none;
+}
+.contenedor1{
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    padding: 0.3%;
+    align-items: center;
+    
+}
+#logo_social{
+    width: 100%;
+}
+#logo{
+    
+    width: 95%;
+    
+}
+#social{
+    text-align: center;
+    background-color: #235C34;
+    width: 5%;
+    height: 50%;
+    border-radius: 5px;
+    
+    
+    
+}
+#social a{
+    text-align: right;
+}
+.contenedor2{
+    
+    width: 100%;
+    
+    display: flex;
+    padding: 0.3%;
+    align-items: center;
+    
+}
+#texto button{
+    border-bottom-style: dashed;
+    border-bottom: #FFB700;
+    background:#FFB700;
+    border-radius: 5px;
+    opacity: 100;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+
+}
+#texto button a{
+    color: white;
+    text-decoration:none;
+}
+#texto{
+    width: 49.5%;
+    
+}
+#imagen_tarro{
+    width: 40%;
+    
+    text-align: left;
+    display: flex;
+    float: right;
+    /* text-align: center; */
+    align-items: center;
+    margin: 1%;
+}
+.contenedor3{
+    
+    width: 100%;
+    
+    text-align: center;
+    padding: 0.3%;
+    
+    
+}
+#texto p{
+    margin: 1%;
+    text-align: justify;
+    color: white;
+
+}

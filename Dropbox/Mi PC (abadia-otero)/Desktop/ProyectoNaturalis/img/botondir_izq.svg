@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="61.704px" height="61.703px" viewBox="0 0 61.704 61.703" enable-background="new 0 0 61.704 61.703" xml:space="preserve">
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="30.8516" x2="61.7041" y2="30.8516">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#FFFFFF"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M30.852,61.703C13.839,61.703,0,47.864,0,30.852S13.839,0,30.852,0s30.853,13.839,30.853,30.852
+		S47.864,61.703,30.852,61.703z"/>
+	<circle fill="#005C2E" cx="30.852" cy="30.852" r="20.792"/>
+	<polygon fill="#FFFFFF" points="28.481,42.166 39.185,31.463 28.481,20.76 	"/>
+</g>
+</svg>

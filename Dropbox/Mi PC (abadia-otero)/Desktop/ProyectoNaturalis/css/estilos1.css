@@ -1,0 +1,133 @@
+body{
+    background: url("") right top no-repeat;
+    font-family: Arial, Helvetica, sans-serif
+}
+header{
+    background-color: gray;
+    opacity: 0.5; 
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    border-radius: 5%;
+    top: 0;
+    height: 13%;
+}
+nav{
+    float: left;
+    margin: 20px;
+    width: 33%;
+    display: inline;
+    
+    
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    
+}
+#n_s{
+    color:#FFB700;
+}
+#search{
+    float: center;
+    margin: 30px;
+    
+    display: inline;
+}
+#carrito{
+    float: right;
+    margin: 1% 1% 1%;
+    
+    text-align: right;
+    width: 10%;
+    display: inline-flex;
+    
+ }
+ #Cont1{
+     margin-top: 80px;
+     width: 100%;
+     
+ }
+ 
+
+ .Cont_Prod1{
+    float: center;
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    padding: 0.3%;
+    flex-direction: column;
+    flex-flow: wrap;
+    background: #FFB700;
+    margin: 0%;
+    text-align: center;
+
+    
+}
+
+.Cont_Prod1 img{
+    width: 33%;
+}
+
+.Cont_Prod1 >div{
+    width: 31%;
+    margin: 0%;
+    padding: 1%;
+    text-align: center;
+    
+}
+
+
+    
+   figure{
+       
+        margin-block-end: auto;
+        display: inline-block;
+        position: relative;
+        border: 1px solid red;
+        overflow: hidden;
+        padding: auto;
+    
+    }
+    
+   figcaption{
+       color: aliceblue;
+        transition: all 1s;
+        background :rgba(0, 0, 0, 0.7);
+        position: absolute;
+        left: 0px;
+        bottom: -1500%;
+        width: 90%;
+        padding: 5%;
+    
+    }
+    
+ figure:hover figcaption{
+        bottom: -120%;
+    }
+
+ #fotico{
+
+    
+        text-align: justify ;
+        float: left;
+        border-radius: 5%;
+        padding: auto;
+        width: 100px;
+        height: auto;
+        margin: block end 1px;;
+        position: relative;
+        border: 1px solid red;
+        
+    }
+    
+
+footer{
+    margin: 0%;
+    padding: 1%;
+    background: #C6d5c5;
+    border-radius: 0 0 10px 10px;
+    
+  }
+
+
