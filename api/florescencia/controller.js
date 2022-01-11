@@ -50,7 +50,7 @@ controladorFlorescencia.put("/actualizarPlanta/:id", async function(req, res){
 });
 
 controladorFlorescencia.delete("/eliminarPlanta/:id", async function(req, res){
-    let id = req.params.id;
+    let id = req.query.id;
     let resultado = await servicioPlantas.eliminarPlanta(id);
     res.send(resultado);
 });

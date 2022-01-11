@@ -28,6 +28,12 @@ controladorUsuarios.post("/crearUsuario", async function(req, res){
     res.send(resultado);
 });
 
+controladorUsuarios.delete("/eliminarUsuario", async function (req, res){
+    let id = req.query;
+    let resultado = await servicioUsuarios.eliminarUsuario(id);
+    res.send(resultado);
+})  
+
 module.exports = controladorUsuarios;
 
 

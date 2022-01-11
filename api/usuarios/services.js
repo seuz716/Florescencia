@@ -60,8 +60,8 @@ async function iniciarSesion(datosUsuario){
              resultado.datos = datosUsuario; 
     }
     return resultado;
-
 }
+
 
 module.exports.crearUser = crearUser;
 module.exports.iniciarSesion = iniciarSesion;

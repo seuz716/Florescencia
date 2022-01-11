@@ -6,12 +6,20 @@ const morgan = require('morgan');
 const controladorFlorescencia = require('./api/florescencia/controller');
 const controladorUsuarios = require('./api/usuarios/controller');
 const conexion  = require ('./database/connection');
+const cors = require('cors');
+const helmet = require('helmet');
+
+const compression = require('compression');
+const { use } = require('./api/florescencia/controller');
 require('dotenv').config();
 
 /*iniciar configuracion*/
 
 const app = express();
 const port = process.env.PORT;
+app.use(cors());
+app.use(helmet());
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(morgan(process.env.MORGAN_MODE));
