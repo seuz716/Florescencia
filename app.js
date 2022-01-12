@@ -1,16 +1,14 @@
 /* Importacion de los modulos requeridos*/
 
 const express = require('express');
+const controladorFlorescencia = require('./api/florescencia/controller.js');
+const controladorUsuarios = require('./api/usuarios/controller');
 const  bodyParser  = require('body-parser');
 const morgan = require('morgan');
-const controladorFlorescencia = require('./api/florescencia/controller');
-const controladorUsuarios = require('./api/usuarios/controller');
 const conexion  = require ('./database/connection');
 const cors = require('cors');
 const helmet = require('helmet');
-
 const compression = require('compression');
-const { use } = require('./api/florescencia/controller');
 require('dotenv').config();
 
 /*iniciar configuracion*/
@@ -26,7 +24,7 @@ app.use(morgan(process.env.MORGAN_MODE));
 
 /*Iniciar las rutas*/
 
-app.use("./api/florescencia", controladorFlorescencia);
+app.use("/api/florescencia", controladorFlorescencia);
 app.use("/api/usuarios", controladorUsuarios);
 
 

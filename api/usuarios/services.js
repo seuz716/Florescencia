@@ -1,7 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-require('dotenv').config();
 const modeloUsuarios = require('./model');
+const jwt = require('../auth/jwt.js');
+require('dotenv').config();
 
 async function crearUser (datosUsuario){
      let resultado = {};
@@ -43,7 +44,10 @@ async function iniciarSesion(datosUsuario){
                 let esValida = bcrypt.compareSync(datosUsuario.clave, claveEncriptada);
                 if (esValida){
                     resultado.mensaje = "Inicio de sesión correcto";
-                    resultado.datos = usuario; 
+                    let token = jwt.generarToken(usuario);
+                    delete usuario.clave;
+                    resultado.datos = usuario;
+                    resultado.token = token; 
                 } 
                 else {
                     resultado.mensaje = "Usuario o Clave incorrectos";

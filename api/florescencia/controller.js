@@ -1,14 +1,14 @@
 const express = require ('express');
 const controladorFlorescencia = express.Router();
 const servicioPlantas = require('./services');
-
+const rutaProtegida = require('../auth/jwt.js').validarToken;
 /*Controlador
 Recibe los datos del cliente
 pasa los datos al servicio
 recibe datos del servicio
 Envia una respuesta */
 
-controladorFlorescencia.get("/obtenerPlantas", async function (req, res) {
+controladorFlorescencia.get("/obtenerPlantas", rutaProtegida, async function (req, res) {
     let plantas = await servicioPlantas.obtenerPlantas();
     res.send({
         "mensaje ": "Listado plantas",
@@ -33,7 +33,7 @@ controladorFlorescencia.get("/obtenerPlantasPorNombre/:nombre", async function(r
         });
 });
 
-controladorFlorescencia.post("/crearPlanta", async function(req, res){
+controladorFlorescencia.post("/crearPlanta",rutaProtegida, async function(req, res){
     let datos = req.body;
     let planta = await servicioPlantas.crearPlanta(datos);
     res.send({
@@ -42,7 +42,7 @@ controladorFlorescencia.post("/crearPlanta", async function(req, res){
     });
 });
 
-controladorFlorescencia.put("/actualizarPlanta/:id", async function(req, res){
+controladorFlorescencia.put("/actualizarPlanta/:id",rutaProtegida, async function(req, res){
     let id = req.params.id;
     let datos = req.body;
     let resultado = await servicioPlantas.actualizarPlanta(id,datos);
@@ -54,5 +54,6 @@ controladorFlorescencia.delete("/eliminarPlanta/:id", async function(req, res){
     let resultado = await servicioPlantas.eliminarPlanta(id);
     res.send(resultado);
 });
+
 
 module.exports = controladorFlorescencia;

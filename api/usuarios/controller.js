@@ -1,6 +1,7 @@
 const express = require('express');
 const controladorUsuarios = express.Router();
 const servicioUsuarios = require('./services');
+const rutaProtegida = require('../auth/jwt.js').validarToken;
 
 
 
@@ -14,7 +15,7 @@ const servicioUsuarios = require('./services');
     "rol":["A","B",..."n"]
 } 
 */
-controladorUsuarios.get("/iniciarSesion", async function(req, res){
+controladorUsuarios.get("/iniciarSesion",  async function(req, res){
     let datosUsuario = req.body;
     let resultado = await servicioUsuarios.iniciarSesion(datosUsuario);
     res.send(resultado);
