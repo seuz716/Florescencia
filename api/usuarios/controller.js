@@ -21,6 +21,13 @@ controladorUsuarios.get("/iniciarSesion",  async function(req, res){
     res.send(resultado);
 });
 
+controladorUsuarios.get("/obtenerUsuarios",  async function (req, res) {
+    let usuarios = await servicioUsuarios.obtenerUsuarios();
+    res.send({
+        "mensaje ": "Listado usuario",
+        "data": usuarios
+    });
+});
 
 
 controladorUsuarios.post("/crearUsuario", async function(req, res){
@@ -29,8 +36,15 @@ controladorUsuarios.post("/crearUsuario", async function(req, res){
     res.send(resultado);
 });
 
-controladorUsuarios.delete("/eliminarUsuario", async function (req, res){
-    let id = req.query;
+controladorUsuarios.put("/actualizarUsuario/:id", async function(req, res){
+    let id = req.params.id;
+    let datos = req.body;
+    let resultado = await servicioUsuarios.actualizarUsuario(id,datos);
+    res.send(resultado);
+});
+
+controladorUsuarios.delete("/eliminarUsuario/:id", async function (req, res){
+    let id = req.params.id;
     let resultado = await servicioUsuarios.eliminarUsuario(id);
     res.send(resultado);
 })  

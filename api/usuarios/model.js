@@ -14,8 +14,8 @@ const objectId = require('mongodb').ObjectId;
     function findAll() {
         let db =  basedatos.obtenerConexion();
         return db.collection("usersPlants").find({}).toArray()
-        .then(function (plantas){
-            return plantas;
+        .then(function (usuarios){
+            return usuarios;
         })
         .catch(function (error) {
             console.log(error)
@@ -26,36 +26,36 @@ const objectId = require('mongodb').ObjectId;
     function obtenerUna(id) {
             let db =  basedatos.obtenerConexion();
              return db.collection("usersPlants").findOne({"_id" : objectId(id)})
-            .then(function (planta){
-                return planta;
+            .then(function (usuario){
+                return usuario;
             })
             .catch(function (error){
                 console.log(error);
             })
     };  
 
-async function buscarUsuario(usuario) {
+async function buscarUsuario(nombre) {
         let db =  basedatos.obtenerConexion();
-         return await db.collection("usersPlants").findOne({"usuario" : usuario});
+         return await db.collection("usersPlants").findOne({"usuario" : nombre});
 };    
 
-function obtenerPorNombre(nombre){
+/*function obtenerPorNombre(nombre){
         let db =  basedatos.obtenerConexion();
-         return db.collection("usersPlants").find({"title" : new RegExp(nombre, "i")}).toArray()
-        .then(function (plantas){
-            return plantas;
+         return db.collection("usersPlants").find({"nombre" : new RegExp(nombre, "i")}).toArray()
+        .then(function (usuarios){
+            return usuarios;
         })
         .catch(function (error){
             console.log(error);
         })
-};
+};*/
 
 async function crearUno(datosUsuario){
     let db =  basedatos.obtenerConexion();
      return  await db.collection("usersPlants").insertOne(datosUsuario);
 };
 
-function actualizarUna(id, datosUsuario){
+function actualizarUna(id, datos){
     let db =  basedatos.obtenerConexion();
      return db.collection("usersPlants").updateOne(
             {"_id": objectId(id)},
@@ -91,7 +91,6 @@ function eliminarUna(id){
 
     module.exports.findAll = findAll;
     module.exports.obtenerUna = obtenerUna;        
-    module.exports.obtenerPorNombre = obtenerPorNombre; 
     module.exports.crearUno = crearUno; 
     module.exports.actualizarUna = actualizarUna;
     module.exports.eliminarUna = eliminarUna;
