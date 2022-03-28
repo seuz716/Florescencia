@@ -8,7 +8,7 @@ pasa los datos al servicio
 recibe datos del servicio
 Envia una respuesta */
 
-controladorFlorescencia.get("/obtenerPlantas", rutaProtegida, async function (req, res) {
+controladorFlorescencia.get("/obtenerPlantas", async function (req, res) {
     let plantas = await servicioPlantas.obtenerPlantas();
     res.send({
         "mensaje ": "Listado plantas",
@@ -49,7 +49,7 @@ controladorFlorescencia.put("/actualizarPlanta/:id",rutaProtegida, async functio
     res.send(resultado);
 });
 
-controladorFlorescencia.delete("/eliminarPlanta/:id", async function(req, res){
+controladorFlorescencia.delete("/eliminarPlanta/:id", rutaProtegida, async function(req, res){
     let id = req.query.id;
     let resultado = await servicioPlantas.eliminarPlanta(id);
     res.send(resultado);
