@@ -13,7 +13,7 @@ const objectId = require('mongodb').ObjectId;
 
     function findAll() {
         let db =  basedatos.obtenerConexion();
-        return db.collection("usersPlants").find({}).toArray()
+        return db.collection("users").find({}).toArray()
         .then(function (usuarios){
             return usuarios;
         })
@@ -25,7 +25,7 @@ const objectId = require('mongodb').ObjectId;
 
     function obtenerUna(id) {
             let db =  basedatos.obtenerConexion();
-             return db.collection("usersPlants").findOne({"_id" : objectId(id)})
+             return db.collection("users").findOne({"_id" : objectId(id)})
             .then(function (usuario){
                 return usuario;
             })
@@ -36,12 +36,12 @@ const objectId = require('mongodb').ObjectId;
 
 async function buscarUsuario(nombre) {
         let db =  basedatos.obtenerConexion();
-         return await db.collection("usersPlants").findOne({"usuario" : nombre});
+         return await db.collection("users").findOne({"usuario" : nombre});
 };    
 
 /*function obtenerPorNombre(nombre){
         let db =  basedatos.obtenerConexion();
-         return db.collection("usersPlants").find({"nombre" : new RegExp(nombre, "i")}).toArray()
+         return db.collection("users").find({"nombre" : new RegExp(nombre, "i")}).toArray()
         .then(function (usuarios){
             return usuarios;
         })
@@ -52,12 +52,12 @@ async function buscarUsuario(nombre) {
 
 async function crearUno(datosUsuario){
     let db =  basedatos.obtenerConexion();
-     return  await db.collection("usersPlants").insertOne(datosUsuario);
+     return  await db.collection("users").insertOne(datosUsuario);
 };
 
 function actualizarUna(id, datos){
     let db =  basedatos.obtenerConexion();
-     return db.collection("usersPlants").updateOne(
+     return db.collection("users").updateOne(
             {"_id": objectId(id)},
             {"$set": datos}
      )       
@@ -72,7 +72,7 @@ function actualizarUna(id, datos){
 
 function eliminarUna(id){
     let db =  basedatos.obtenerConexion();
-     return db.collection("usersPlants").deleteOne(
+     return db.collection("users").deleteOne(
             {"_id": objectId(id)},
            
      )       

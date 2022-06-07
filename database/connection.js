@@ -13,6 +13,8 @@ const conectar = function (resolve, reject){
             mongloClient.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
             .then(function (client) {
                 conexion = client.db(process.env.MONGODB_DB);
+                console.log('base de datos conectada')
+                
                 resolve();
             })
             .catch(function (error){
@@ -23,7 +25,9 @@ const conectar = function (resolve, reject){
     });
 }
 const obtenerConexion = function () {
+    
     return conexion;
+
 }
 
 

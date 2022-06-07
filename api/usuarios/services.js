@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 const modeloUsuarios = require('./model');
 const jwt = require('../auth/jwt.js');
 require('dotenv').config();
