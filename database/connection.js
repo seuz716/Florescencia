@@ -13,9 +13,11 @@ const conectar = function (resolve, reject){
             mongloClient.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
             .then(function (client) {
                 conexion = client.db(process.env.MONGODB_DB);
+                console.log("database conected");
                 resolve();
             })
             .catch(function (error){
+                console.log("base de datos pailas");
                 reject(error);
             });
         }
@@ -23,7 +25,9 @@ const conectar = function (resolve, reject){
     });
 }
 const obtenerConexion = function () {
+    console.log("conected"); 
     return conexion;
+    
 }
 
 

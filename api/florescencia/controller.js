@@ -42,7 +42,7 @@ controladorFlorescencia.post("/crearPlanta",rutaProtegida, async function(req, r
     });
 });
 
-controladorFlorescencia.put("/actualizarPlanta/:id",rutaProtegida, async function(req, res){
+controladorFlorescencia.put("/actualizarPlanta/:id", async function(req, res){
     let id = req.params.id;
     let datos = req.body;
     let resultado = await servicioPlantas.actualizarPlanta(id,datos);

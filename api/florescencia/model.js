@@ -14,8 +14,8 @@ const objectId = require('mongodb').ObjectId;
     function findAll() {
         let db =  basedatos.obtenerConexion();
         return db.collection("PlantasMexico").find({}).toArray()
-        .then(function (plantas){
-            return plantas;
+        .then(function (terceros){
+            return terceros;
         })
         .catch(function (error) {
             console.log(error)
